@@ -151,7 +151,7 @@
                   <input type="password" class="form-control" placeholder="Password" name="password">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Confirm Password" name="confirm-pass" >
+                  <input type="password" class="form-control" placeholder="Confirm Password" name="confirm-pass">
                 </div>
                 <div class="form-group checkbox">
                   <input type="checkbox" id="terms_agree">
