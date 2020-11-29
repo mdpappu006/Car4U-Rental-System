@@ -10,19 +10,19 @@
         <div class="row">
           <div class="login_wrap">
             <div class="col-md-6 col-sm-6">
-              <form action="#" method="get">
+              <form action="#" method="POST">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Username or Email address*">
+                  <input type="text" class="form-control" placeholder="Username or Email address*" name="email">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Password*">
+                  <input type="password" class="form-control" placeholder="Password*" name="password">
                 </div>
                 <div class="form-group checkbox">
                   <input type="checkbox" id="remember">
                   <label for="remember">Remember Me</label>
                 </div>
                 <div class="form-group">
-                  <input type="submit" value="Login" class="btn btn-block">
+                  <input type="submit" value="Login" class="btn btn-block" name="userLogin">
                 </div>
               </form>
             </div>
