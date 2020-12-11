@@ -2,6 +2,8 @@
   require_once("backend/db.php");
   include_once("backend/user-signup.php");
   include_once("backend/user-login.php");
+
+  // var_dump( $_SESSION['user'] );
 ?>
 
 
@@ -94,6 +96,10 @@
         <button id="menu_slide" data-target="#navigation" aria-expanded="false" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
       </div>
       <div class="header_wrap">
+
+        <?php 
+          if($_SESSION['user']):
+        ?>
         <div class="user_login">
           <ul>
             <li class="dropdown"> <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> Jhon Anderson <i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -106,6 +112,8 @@
             </li>
           </ul>
         </div>
+        <?php endif;?>
+
         <div class="header_search">
           <div id="search_toggle"><i class="fa fa-search" aria-hidden="true"></i></div>
           <form action="#" method="get" id="header-search-form">

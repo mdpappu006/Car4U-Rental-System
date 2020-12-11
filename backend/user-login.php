@@ -1,7 +1,6 @@
 <?php
-
+	$_SESSION['user'] = false;
 	if(isset($_POST['userLogin'])){
-		
 		// SANITIZATION
 		$email = filter_input(INPUT_POST, 'email',FILTER_SANITIZE_STRING);
 		$pass = filter_input(INPUT_POST, 'password' ,FILTER_SANITIZE_STRING);
@@ -17,9 +16,8 @@
 				if($data){
 					$p = password_verify($pass, $_password);
 					if($p == true){
-						// $_SESSION['user'] = true;
+						$_SESSION['user'] = true;
 						// $_SESSION['username'] = $data['firstname'];
-						echo "user";
 					}else{
 						$passError = true;
 					}
