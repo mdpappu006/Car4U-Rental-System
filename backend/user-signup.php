@@ -1,6 +1,5 @@
 <?php
 	if(isset($_POST['user-signup'])){
-		
 		// SANITIZATION
 		$name = filter_input(INPUT_POST, 'full-name' ,FILTER_SANITIZE_STRING);
 		$email = filter_input(INPUT_POST, 'email',FILTER_SANITIZE_STRING);

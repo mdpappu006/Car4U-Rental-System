@@ -33,11 +33,6 @@
 
 <!-- Custom Colors -->
 <link rel="stylesheet" href="assets/colors/red.css">
-<!--<link rel="stylesheet" href="assets/colors/orange.css">-->
-<!--<link rel="stylesheet" href="assets/colors/blue.css">-->
-<!--<link rel="stylesheet" href="assets/colors/pink.css">-->
-<!--<link rel="stylesheet" href="assets/colors/green.css">-->
-<!--<link rel="stylesheet" href="assets/colors/purple.css">-->
         
 <!-- Fav and touch icons -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
