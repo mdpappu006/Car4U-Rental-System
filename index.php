@@ -24,7 +24,7 @@
   <div class="container">
     <h3>Find Your Dream Car <span>(Easy search from here)</span></h3>
     <div class="row">
-      <form action="#" method="get">
+      <form method="post">
         <div class="form-group col-md-3 col-sm-6 black_input">
           <div class="select">
             <select class="form-control">
