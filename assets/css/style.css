@@ -5536,3 +5536,18 @@ h5 {
 .mobile_search{
 	display:none;
 }
+
+
+/*  
+==========================
+My Custom Css style Code
+==========================
+*/
+
+.registration-area{
+  padding: 50px 0;
+}
+
+.w-25{
+  width: 25%;
+}
