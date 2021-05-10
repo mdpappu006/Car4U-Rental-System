@@ -59,7 +59,6 @@
               <div class="circle_icon"> <i class="fa fa-phone" aria-hidden="true"></i> </div>
               <p class="uppercase_text">Service Helpline Call Us: </p>
               <a href="tel:61-1234-5678-09">+61-1234-5678-9</a> </div>
-            <?php  if(!$id):?>
             <div class="social-follow">
               <ul>
                 <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
@@ -69,8 +68,10 @@
                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
               </ul>
             </div>
-            <div class="login_btn"> <a href="#loginform" class="btn btn-xs uppercase" data-toggle="modal" data-dismiss="modal">Login / Register</a> </div>
-            <?php endif;?>
+            <div class="login_btn"> 
+              <a href="login.php" class="btn btn-xs uppercase">Login</a> 
+              <a href="registration.php" class="btn btn-xs uppercase"> Register</a> 
+            </div>
 
           </div>
         </div>
@@ -85,15 +86,10 @@
         <button id="menu_slide" data-target="#navigation" aria-expanded="false" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
       </div>
       <div class="header_wrap">
-
-        <?php 
-          // session_destroy();
-          if($id):       
-        ?>
         <div class="user_login">
           <ul>
             <li class="dropdown"> <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> 
-             <i class="fa fa-angle-down" aria-hidden="true"> <?php echo $name;?></i>
+             <i class="fa fa-angle-down" aria-hidden="true"> </i>
            </a>
               <ul class="dropdown-menu">
                 <li><a href="profile-settings.html">Profile Settings</a></li>
@@ -104,8 +100,7 @@
             </li>
           </ul>
         </div>
-        <?php endif;?>
-
+ 
         <div class="header_search">
           <div id="search_toggle"><i class="fa fa-search" aria-hidden="true"></i></div>
           <form action="#" method="get" id="header-search-form">
