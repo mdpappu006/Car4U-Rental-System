@@ -1,13 +1,3 @@
-<?php 
-  require_once("backend/db.php");
-  include_once("backend/user-signup.php");
-  include_once("backend/user-login.php");
-
-  $id = $_SESSION['user'] ?? 0;
-  $name = $_SESSION['username'] ?? 0;
-?>
-
-
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
