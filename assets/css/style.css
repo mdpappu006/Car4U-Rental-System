@@ -5551,3 +5551,7 @@ My Custom Css style Code
 .w-25{
   width: 25%;
 }
+
+.modal-footer.text-center{
+  text-align: center!important;
+}

@@ -83,17 +83,6 @@
 <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
 <!--/Back to top--> 
 
-<!-- Login Form -->
-<?php include_once('login.php');?>
-<!-- Login Form -->
-
-<!--Register-Form -->
-<?php include_once('registration.php');?>
-<!--/Register-Form --> 
-
-<!--Forgot-password-Form -->
-<?php include_once('forgot.php');?>
-<!--/Forgot-password-Form --> 
 
 <!-- Scripts --> 
 <script src="assets/js/jquery.min.js"></script>
