@@ -1,4 +1,5 @@
-<?php include_once('partials/header.php');?>
+<?php include_once('partials/header.php');
+?>
 
 <!-- Banners -->
 <section id="banner" class="banner-section">

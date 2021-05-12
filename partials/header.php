@@ -1,5 +1,8 @@
 <?php
   require_once('conn.php');
+
+  $userID = $_SESSION['userid'] ?? 0;
+
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -71,11 +74,12 @@
                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
               </ul>
             </div>
+            <?php if(!$userID): ?>
             <div class="login_btn"> 
               <a href="login.php" class="btn btn-xs uppercase">Login</a> 
               <a href="registration.php" class="btn btn-xs uppercase"> Register</a> 
             </div>
-
+            <?php endif;?>
           </div>
         </div>
       </div>
@@ -89,6 +93,9 @@
         <button id="menu_slide" data-target="#navigation" aria-expanded="false" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
       </div>
       <div class="header_wrap">
+
+        <!-- User Profile after login -->
+        <?php if($userID): ?>
         <div class="user_login">
           <ul>
             <li class="dropdown"> <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> 
@@ -103,7 +110,10 @@
             </li>
           </ul>
         </div>
- 
+        <?php endif;?>
+        <!-- End User Profile after login -->
+          
+
         <div class="header_search">
           <div id="search_toggle"><i class="fa fa-search" aria-hidden="true"></i></div>
           <form action="#" method="get" id="header-search-form">

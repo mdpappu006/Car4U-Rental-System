@@ -8,7 +8,7 @@
         $pass_verified = password_verify( $conf_pass, $password);
 
         if($pass_verified){
-            $sql="INSERT INTO  tblusers(FullName,EmailId,ContactNo,Password) VALUES('$fname','$email','$mobile','$conf_pass')";
+            $sql="INSERT INTO  tblusers(FullName,EmailId,ContactNo,Password) VALUES('$fname','$email','$mobile','$password')";
             $result = mysqli_query($db, $sql);
             
             if($result){	

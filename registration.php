@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <p class="text-left">Already got an account? <a href="#loginform" data-toggle="modal" data-dismiss="modal">Login Here</a></p>
+                    <p class="text-left">Already got an account? <a href="login.php">Login Here</a></p>
                 </div>
             </div>
         </div>

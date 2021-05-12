@@ -1,4 +1,8 @@
-<?php include_once('partials/header.php');?>
+<?php 
+  ob_start();
+  include_once('partials/header.php');
+  include_once('partials/login.php');
+?>
 
 <!--Login-Form -->
 <div class="container">
@@ -13,7 +17,7 @@
             <div class="row">
               <div class="login_wrap">
                 <div class="col-md-12 col-sm-12">
-                  <form action="#" method="POST">
+                  <form method="POST">
                     <div class="form-group">
                       <input type="text" class="form-control" placeholder="Username or Email address*" name="email">
                     </div>
@@ -33,7 +37,7 @@
             </div>
           </div>
           <div class="modal-footer text-center">
-            <p>Don't have an account? <a href="#signupform" data-toggle="modal" data-dismiss="modal">Signup Here</a></p>
+            <p>Don't have an account? <a href="registration.php">Signup Here</a></p>
             <p><a href="#forgotpassword" data-toggle="modal" data-dismiss="modal">Forgot Password ?</a></p>
           </div>
         </div>
