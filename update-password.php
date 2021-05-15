@@ -13,11 +13,11 @@
   <div class="container">
     <div class="page-header_wrap">
       <div class="page-heading">
-        <h1>Your Profile</h1>
+        <h1>Update Password</h1>
       </div>
       <ul class="coustom-breadcrumb">
         <li><a href="#">Home</a></li>
-        <li>Profile</li>
+        <li>Update Password</li>
       </ul>
     </div>
   </div>
@@ -55,36 +55,8 @@
       </div>
       <div class="col-md-6 col-sm-8">
         <div class="profile_wrap">
-          <h5 class="uppercase underline">Genral Settings</h5>
           <form action="#" method="get">
-            <div class="form-group">
-              <label class="control-label">Full Name</label>
-              <input class="form-control white_bg" id="fullname" type="text">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Email Address</label>
-              <input class="form-control white_bg" id="email" type="email">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Phone Number</label>
-              <input class="form-control white_bg" id="phone-number" type="text">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Date of Birth</label>
-              <input class="form-control white_bg" id="birth-date" type="text">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Your Address</label>
-              <textarea class="form-control white_bg" rows="4"></textarea>
-            </div>
-            <div class="form-group">
-              <label class="control-label">Country</label>
-              <input class="form-control white_bg" id="country" type="text">
-            </div>
-            <div class="form-group">
-              <label class="control-label">City</label>
-              <input class="form-control white_bg" id="city" type="text">
-            </div>
+           
             <div class="gray-bg field-title">
               <h6>Update password</h6>
             </div>
