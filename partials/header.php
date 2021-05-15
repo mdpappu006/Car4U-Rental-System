@@ -105,7 +105,7 @@
                 <li><a href="profile-settings.html">Profile Settings</a></li>
                 <li><a href="my-vehicles.html">My Vehicles</a></li>
                 <li><a href="post-vehicle.html">Post a Vehicle</a></li>
-                <li><a href="./backend/logout.php">Sign Out</a></li>
+                <li><a href="./logout.php">Sign Out</a></li>
               </ul>
             </li>
           </ul>

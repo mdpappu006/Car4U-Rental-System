@@ -28,7 +28,7 @@
             }else{
                 $_SESSION['error'] = true;
                 if($_SESSION['error']){
-                    header("location: ./staff-login.php");
+                    header("location: ./login.php");
                     exit;
                 }
             }
