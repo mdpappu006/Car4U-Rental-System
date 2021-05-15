@@ -102,7 +102,7 @@
              <i class="fa fa-angle-down" aria-hidden="true"> </i>
            </a>
               <ul class="dropdown-menu">
-                <li><a href="profile-settings.html">Profile Settings</a></li>
+                <li><a href="profile-settings.php">Profile Settings</a></li>
                 <li><a href="my-vehicles.html">My Vehicles</a></li>
                 <li><a href="post-vehicle.html">Post a Vehicle</a></li>
                 <li><a href="./logout.php">Sign Out</a></li>
