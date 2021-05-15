@@ -45,7 +45,7 @@
       <div class="col-md-3 col-sm-3">
         <div class="profile_nav">
           <ul>
-            <li class="active"><a href="profile-settings.html">Profile Settings</a></li>
+            <li class="active"><a href="profile-settings.php">Profile Settings</a></li>
             <li><a href="my-vehicles.html">My Vehicles</a></li>
             <li><a href="post-vehicle.html">Post a Vehicles</a></li>
             <li><a href="#">Sign Out</a></li>
@@ -95,25 +95,7 @@
               <label class="control-label">Confirm Password</label>
               <input class="form-control white_bg" id="c-password" type="password">
             </div>
-            <div class="gray-bg field-title">
-              <h6>Social Links</h6>
-            </div>
-            <div class="form-group">
-              <label class="control-label">Facebook ID</label>
-              <input class="form-control white_bg" id="facebook" type="text">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Twitter ID</label>
-              <input class="form-control white_bg" id="twitter" type="text">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Linkedin ID</label>
-              <input class="form-control white_bg" id="linkedin" type="text">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Google+ ID</label>
-              <input class="form-control white_bg" id="google" type="text">
-            </div>
+           
             <div class="form-group">
               <button type="submit" class="btn">Save Changes <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
             </div>

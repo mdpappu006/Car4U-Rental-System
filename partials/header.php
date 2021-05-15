@@ -1,6 +1,5 @@
 <?php
   require_once('conn.php');
-
   $userID = $_SESSION['userid'] ?? 0;
 
 ?>
@@ -99,6 +98,7 @@
         <div class="user_login">
           <ul>
             <li class="dropdown"> <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> 
+            <?php echo $_SESSION['userName'];?> 
              <i class="fa fa-angle-down" aria-hidden="true"> </i>
            </a>
               <ul class="dropdown-menu">
