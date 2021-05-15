@@ -42,17 +42,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3 col-sm-3">
-        <div class="profile_nav">
-          <ul>
-            <li class="active"><a href="profile-settings.php">Profile Settings</a></li>
-            <li><a href="update-password.php">Update password</a></li>
-            <li><a href="my-vehicles.html">My Vehicles</a></li>
-            <li><a href="post-vehicle.html">Post a Vehicles</a></li>
-            <li><a href="logout.php">Sign Out</a></li>
-          </ul>
-        </div>
-      </div>
+      <!-- Profile nav -->
+      <?php
+        include_once('profile-nav.php');
+      ?>
+      <!-- Profile nav -->
       <div class="col-md-6 col-sm-8">
         <div class="profile_wrap">
           <h5 class="uppercase underline">Genral Settings</h5>
@@ -85,18 +79,6 @@
               <label class="control-label">City</label>
               <input class="form-control white_bg" id="city" type="text">
             </div>
-            <div class="gray-bg field-title">
-              <h6>Update password</h6>
-            </div>
-            <div class="form-group">
-              <label class="control-label">Password</label>
-              <input class="form-control white_bg" id="password" type="password">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Confirm Password</label>
-              <input class="form-control white_bg" id="c-password" type="password">
-            </div>
-           
             <div class="form-group">
               <button type="submit" class="btn">Save Changes <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
             </div>

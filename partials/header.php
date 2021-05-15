@@ -103,6 +103,7 @@
            </a>
               <ul class="dropdown-menu">
                 <li><a href="profile-settings.php">Profile Settings</a></li>
+                <li><a href="update-password.php">Update Password</a></li>
                 <li><a href="my-vehicles.html">My Vehicles</a></li>
                 <li><a href="post-vehicle.html">Post a Vehicle</a></li>
                 <li><a href="./logout.php">Sign Out</a></li>
