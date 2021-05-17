@@ -103,9 +103,10 @@
            </a>
               <ul class="dropdown-menu">
                 <li><a href="profile-settings.php">Profile Settings</a></li>
-                <li><a href="update-password.php">Update Password</a></li>
-                <li><a href="my-vehicles.html">My Vehicles</a></li>
-                <li><a href="post-vehicle.html">Post a Vehicle</a></li>
+                <li><a href="update-password.php">Update password</a></li>
+                <li><a href="my-booking.php">My Booking</a></li>
+                <li><a href="post-testimonial.php">Post a Testimonial</a></li>
+                <li><a href="my-testimonial.php">My Testimonials</a></li>
                 <li><a href="./logout.php">Sign Out</a></li>
               </ul>
             </li>
