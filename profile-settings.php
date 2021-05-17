@@ -36,49 +36,63 @@
         </div>
       </div>
       <div class="dealer_info">
-        <h5>Autospot Used Cars Center </h5>
-        <p>P.1225 N Broadway Ave <br>
-          Oklahoma City, OK  1234-5678-090</p>
+        <h5><?php echo $_SESSION['userName'];?> </h5>
       </div>
     </div>
     <div class="row">
       <!-- Profile nav -->
       <?php
         include_once('profile-nav.php');
+
+        // user Profile all info Query->
+
+        $query = "SELECT * from tblusers where id='2'";
+        $result = mysqli_query($db, $query);
+
+
       ?>
       <!-- Profile nav -->
       <div class="col-md-6 col-sm-8">
         <div class="profile_wrap">
           <h5 class="uppercase underline">Genral Settings</h5>
           <form action="#" method="get">
+          
+        <?php 
+            foreach($result as $row):
+        ?>
+
             <div class="form-group">
               <label class="control-label">Full Name</label>
-              <input class="form-control white_bg" id="fullname" type="text">
+              <input class="form-control white_bg" id="fullname" type="text" value="<?php echo $row['FullName'];?>">
             </div>
             <div class="form-group">
               <label class="control-label">Email Address</label>
-              <input class="form-control white_bg" id="email" type="email">
+              <input class="form-control white_bg" id="email" type="email" value="<?php echo $row['EmailId'];?>">
             </div>
             <div class="form-group">
               <label class="control-label">Phone Number</label>
-              <input class="form-control white_bg" id="phone-number" type="text">
+              <input class="form-control white_bg" id="phone-number" type="text" value="<?php echo $row['ContactNo'];?>">
             </div>
             <div class="form-group">
               <label class="control-label">Date of Birth</label>
-              <input class="form-control white_bg" id="birth-date" type="text">
+              <input class="form-control white_bg" id="birth-date" type="text" placeholder="dd/mm/yyyy">
             </div>
             <div class="form-group">
               <label class="control-label">Your Address</label>
-              <textarea class="form-control white_bg" rows="4"></textarea>
+              <textarea class="form-control white_bg" rows="4" value="<?php echo $row['Address'];?>"></textarea>
             </div>
             <div class="form-group">
               <label class="control-label">Country</label>
-              <input class="form-control white_bg" id="country" type="text">
+              <input class="form-control white_bg" id="country" type="text" value="<?php echo $row['Country'];?>">
             </div>
             <div class="form-group">
               <label class="control-label">City</label>
-              <input class="form-control white_bg" id="city" type="text">
+              <input class="form-control white_bg" id="city" type="text" value="<?php echo $row['City'];?>">
             </div>
+      <?php 
+         endforeach;
+      ?>
+
             <div class="form-group">
               <button type="submit" class="btn">Save Changes <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
             </div>

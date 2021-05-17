@@ -8,7 +8,6 @@
   }
 ?>
 
-
 <!--Page Header-->
 <section class="page-header profile_page">
   <div class="container">
