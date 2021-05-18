@@ -19,7 +19,11 @@
     $country= $_POST['country'];
     $userQuery = "UPDATE tblusers set FullName='$fullname', EmailId='$email', ContactNo='$contact', dob='$dob', Address='$address', City='$city', Country='$country' where id='{$_SESSION['userid']}'";
     $userResult = mysqli_query($db, $userQuery);
-    header('location: profile-settings.php');
+    if($userResult){
+      $_SESSION['success'] = true;
+      header('location: profile-settings.php');
+      exit();
+    }
   }
   //End Profile Updates query
 
@@ -71,6 +75,17 @@
       <div class="col-md-6 col-sm-8">
         <div class="profile_wrap">
           <h5 class="uppercase underline">Genral Settings</h5>
+
+          <!-- success Message -->    
+          <?php if(isset($_SESSION['success'])):?>
+                  <div class="mt-5 alert alert-success text-uppercase text-center font-weight-bold" role="alert">
+                    Profile Updated Successfully.
+                  </div>
+              <?php unset($_SESSION["success"]);
+                  
+              endif;?> 
+            <!-- success Message -->
+
           <form method="POST">
           
           <?php 
