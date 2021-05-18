@@ -9,8 +9,19 @@
 
   // Profile Updates query
   
-  
-
+  if(isset($_POST['saveChanges'])){
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $contact = $_POST['phoneNum'];
+    $dob= $_POST['dob'];
+    $address= $_POST['uraddress'];
+    $city= $_POST['city'];
+    $country= $_POST['country'];
+    $userQuery = "UPDATE tblusers set FullName='$fullname', EmailId='$email', ContactNo='$contact', dob='$dob', Address='$address', City='$city', Country='$country' where id='{$_SESSION['userid']}'";
+    $userResult = mysqli_query($db, $userQuery);
+    header('location: profile-settings.php');
+  }
+  //End Profile Updates query
 
 ?>
 
@@ -68,31 +79,31 @@
           ?>
             <div class="form-group">
               <label class="control-label">Full Name</label>
-              <input class="form-control white_bg" id="fullname" type="text" value="<?php echo $row['FullName'];?>">
+              <input class="form-control white_bg" id="fullname" name="fullname" type="text" value="<?php echo $row['FullName'];?>">
             </div>
             <div class="form-group">
               <label class="control-label">Email Address</label>
-              <input class="form-control white_bg" id="email" type="email" value="<?php echo $row['EmailId'];?>">
+              <input class="form-control white_bg" id="email" name="email" type="email" value="<?php echo $row['EmailId'];?>">
             </div>
             <div class="form-group">
               <label class="control-label">Phone Number</label>
-              <input class="form-control white_bg" id="phone-number" type="text" value="<?php echo $row['ContactNo'];?>">
+              <input class="form-control white_bg" id="phone-number" name="phoneNum" type="text" value="<?php echo $row['ContactNo'];?>">
             </div>
             <div class="form-group">
               <label class="control-label">Date of Birth</label>
-              <input class="form-control white_bg" id="birth-date" type="text" placeholder="dd/mm/yyyy">
+              <input class="form-control white_bg" id="birth-date" name="dob" type="text" placeholder="dd/mm/yyyy" value="<?php echo $row['dob'];?>">
             </div>
             <div class="form-group">
               <label class="control-label">Your Address</label>
-              <textarea class="form-control white_bg" rows="4" value="<?php echo $row['Address'];?>"></textarea>
+              <textarea class="form-control white_bg" name="uraddress" rows="4" value="Hi"><?php echo $row['Address'];?></textarea>
             </div>
             <div class="form-group">
               <label class="control-label">Country</label>
-              <input class="form-control white_bg" id="country" type="text" value="<?php echo $row['Country'];?>">
+              <input class="form-control white_bg" id="country" name="country" type="text" value="<?php echo $row['Country'];?>">
             </div>
             <div class="form-group">
               <label class="control-label">City</label>
-              <input class="form-control white_bg" id="city" type="text" value="<?php echo $row['City'];?>">
+              <input class="form-control white_bg" id="city" name="city" type="text" value="<?php echo $row['City'];?>">
             </div>
 
             <?php 
@@ -101,7 +112,7 @@
             ?>
 
             <div class="form-group">
-              <button type="submit" class="btn">Save Changes <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+              <button type="submit" class="btn" name="saveChanges">Save Changes <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
             </div>
           </form>
         </div>
