@@ -6,6 +6,12 @@
       header("location: index.php");
       die();
   }
+
+  // Profile Updates query
+  
+  
+
+
 ?>
 
 <!--Page Header-->
@@ -45,8 +51,7 @@
         include_once('profile-nav.php');
 
         // user Profile all info Query->
-
-        $query = "SELECT * from tblusers where id='2'";
+        $query = "SELECT * from tblusers where id='{$_SESSION['userid']}'";
         $result = mysqli_query($db, $query);
 
 
@@ -55,12 +60,12 @@
       <div class="col-md-6 col-sm-8">
         <div class="profile_wrap">
           <h5 class="uppercase underline">Genral Settings</h5>
-          <form action="#" method="get">
+          <form method="POST">
           
-        <?php 
-            foreach($result as $row):
-        ?>
-
+          <?php 
+              // Find User details
+              foreach($result as $row):
+          ?>
             <div class="form-group">
               <label class="control-label">Full Name</label>
               <input class="form-control white_bg" id="fullname" type="text" value="<?php echo $row['FullName'];?>">
@@ -89,9 +94,11 @@
               <label class="control-label">City</label>
               <input class="form-control white_bg" id="city" type="text" value="<?php echo $row['City'];?>">
             </div>
-      <?php 
-         endforeach;
-      ?>
+
+            <?php 
+              endforeach;
+              // Loop End
+            ?>
 
             <div class="form-group">
               <button type="submit" class="btn">Save Changes <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
