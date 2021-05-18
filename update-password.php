@@ -128,15 +128,15 @@
 
             <div class="form-group">
               <label class="control-label">Current Password</label>
-              <input class="form-control white_bg" id="password" name="currentPass" type="password">
+              <input class="form-control white_bg" id="password" name="currentPass" type="password" required>
             </div>
             <div class="form-group">
               <label class="control-label">Password</label>
-              <input class="form-control white_bg" id="password" name="newpassword" type="password">
+              <input class="form-control white_bg" id="password" name="newpassword" type="password" required>
             </div>
             <div class="form-group">
               <label class="control-label">Confirm Password</label>
-              <input class="form-control white_bg" id="c-password" name="confirmpassword" type="password">
+              <input class="form-control white_bg" id="c-password" name="confirmpassword" type="password" required>
             </div>
            
             <div class="form-group">
