@@ -1,3 +1,8 @@
+<?php
+	include_once('backend/db.php');
+	include_once('backend/login.php');
+
+?>
 <!doctype html>
 <html lang="en" class="no-js">
 
