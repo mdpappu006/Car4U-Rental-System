@@ -3,36 +3,17 @@
   <div class="footer-top">
     <div class="container">
       <div class="row">
-        <div class="col-md-3 col-sm-6">
-          <h6>Top Categores</h6>
-          <ul>
-            <li><a href="#">Car Brand Name</a></li>
-            <li><a href="#">Car Brand Name 2</a></li>
-            <li><a href="#">Car Brand Name 3</a></li>
-            <li><a href="#">Car Brand Name 4</a></li>
-            <li><a href="#">Car Brand Name 5</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-6 col-sm-6">
           <h6>About Us</h6>
           <ul>
+            <li><a href="about-us.php">About Us </a></li>
+            <li><a href="faq.php">FAQs</a></li>
             <li><a href="#">Privacy</a></li>
-            <li><a href="#">Hybrid Cars</a></li>
-            <li><a href="#">Cookies</a></li>
-            <li><a href="#">Trademarks</a></li>
             <li><a href="#">Terms of use</a></li>
+            <li><a href="admin/">Admin Login</a></li>
           </ul>
         </div>
-        <div class="col-md-3 col-sm-6">
-          <h6>Useful Links</h6>
-          <ul>
-            <li><a href="#">Our Partners</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Sitemap</a></li>
-            <li><a href="#">Investors</a></li>
-            <li><a href="#">Request a Quote</a></li>
-          </ul>
-        </div>
+        
         <div class="col-md-3 col-sm-6">
           <h6>Subscribe Newsletter</h6>
           <div class="newsletter-form">
