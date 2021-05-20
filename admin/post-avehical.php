@@ -1,3 +1,6 @@
+<?php
+	include_once('backend/db.php');
+?>
 <!doctype html>
 <html lang="en" class="no-js">
 
@@ -28,7 +31,7 @@
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
 <style>
-		.errorWrap {
+	.errorWrap {
     padding: 10px;
     margin: 0 0 20px 0;
     background: #fff;
@@ -78,8 +81,14 @@
 	<div class="col-sm-4">
 	<select class="selectpicker" name="brandname" required>
 	<option value=""> Select </option>
+	<?php 
+		$sql = "SELECT * FROM tblbrands";
+		$results = mysqli_query($db, $sql);
 
-
+		foreach($results as $result){ ?>
+			<option value=""> <?php echo $result['BrandName'];?> </option>
+			
+	<?php } ?>
 	</select>
 	</div>
 	</div>
