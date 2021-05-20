@@ -58,8 +58,13 @@
 										<div class="panel panel-default">
 											<div class="panel-body bk-primary text-light">
 												<div class="stat-panel text-center">
+<?php 
+	$query = "SELECT * FROM tblusers";
+	$result = mysqli_query($db, $query);
+	$reg_user = mysqli_num_rows($result);
+?>
 
-													<div class="stat-panel-number h1 "> 1</div>
+													<div class="stat-panel-number h1 "> <?php echo $reg_user ?></div>
 													<div class="stat-panel-title text-uppercase">Reg Users</div>
 												</div>
 											</div>
