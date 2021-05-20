@@ -1,31 +1,16 @@
 <?php
-session_start();
-error_reporting(0);
-include('includes/config.php');
-if(strlen($_SESSION['alogin'])==0)
-	{	
-header('location:index.php');
-}
-else{
-// Code for change password	
-if(isset($_POST['submit']))
-{
-$brand=$_POST['brand'];
-$sql="INSERT INTO  tblbrands(BrandName) VALUES(:brand)";
-$query = $dbh->prepare($sql);
-$query->bindParam(':brand',$brand,PDO::PARAM_STR);
-$query->execute();
-$lastInsertId = $dbh->lastInsertId();
-if($lastInsertId)
-{
-$msg="Brand Created successfully";
-}
-else 
-{
-$error="Something went wrong. Please try again";
-}
+	include_once('backend/db.php');
+	$id = $_SESSION['userid'] ?? 0;
+	if(!$id){
+		header("location: index.php");
+		die();
+	}
 
-}
+	// Code for change password	
+	if(isset($_POST['submit'])){
+
+	}
+
 ?>
 
 <!doctype html>
@@ -98,9 +83,10 @@ $error="Something went wrong. Please try again";
 									<div class="panel-body">
 										<form method="post" name="chngpwd" class="form-horizontal" onSubmit="return valid();">
 										
+											<!-- Error Messages -->
 											
-  	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+											<!-- Error Messages -->
+
 											<div class="form-group">
 												<label class="col-sm-4 control-label">Brand Name</label>
 												<div class="col-sm-8">
@@ -108,9 +94,6 @@ $error="Something went wrong. Please try again";
 												</div>
 											</div>
 											<div class="hr-dashed"></div>
-											
-										
-								
 											
 											<div class="form-group">
 												<div class="col-sm-8 col-sm-offset-4">
@@ -151,4 +134,3 @@ $error="Something went wrong. Please try again";
 </body>
 
 </html>
-<?php } ?>
