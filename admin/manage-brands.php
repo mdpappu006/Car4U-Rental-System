@@ -1,5 +1,11 @@
 <?php
 	include_once('backend/db.php');
+	
+	$id = $_SESSION['userid'] ?? 0;
+	if(!$id){
+		header("location: index.php");
+		die();
+	}
 ?>
 
 <!doctype html>
