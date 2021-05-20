@@ -1,17 +1,9 @@
 <?php
 	include_once('backend/db.php');
-	include_once('backend/create-brand.php');
-
-	$id = $_SESSION['userid'] ?? 0;
-	if(!$id){
-		header("location: index.php");
-		die();
-	}
 ?>
 
 <!doctype html>
 <html lang="en" class="no-js">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +12,7 @@
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal | Admin Create Brand</title>
+	<title>Car Rental Portal |Admin Manage Brands   </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -57,85 +49,76 @@
 }
 		</style>
 
-
 </head>
 
 <body>
 	<?php include('includes/header.php');?>
+
 	<div class="ts-main-content">
-	<?php include('includes/leftbar.php');?>
+		<?php include('includes/leftbar.php');?>
 		<div class="content-wrapper">
 			<div class="container-fluid">
 
 				<div class="row">
-														
-					<!-- Failed Message -->
-					<div class="col-md-12">	
-						<?php if(isset($_SESSION['error'])):?>
-							<div class="alert alert-danger text-uppercase text-center font-weight-bold w-25 m-auto" role="alert">
-								The band name wasn't added.
-							</div>
-						<?php unset($_SESSION["error"]);
-						endif;?> 
-					</div>
-				</div>
-					
-					<!-- Failed Message -->
-				<div class="row">
 					<div class="col-md-12">
-						<!-- success Message -->
-							<?php if(isset($_SESSION['success'])):?>
-								<div class="alert alert-success text-uppercase text-center font-weight-bold w-25 m-auto" role="alert">
-									The band name added Successfully.
-								</div>
-							<?php unset($_SESSION["success"]);
-								
-							endif;?>
-						<!-- success Message -->
-					</div>
-				</div>
 
-				<div class="row">
-					<div class="col-md-12">
-					
-						<h2 class="page-title">Create Brand</h2>
+						<h2 class="page-title">Manage Brands</h2>
 
-						<div class="row">
-							<div class="col-md-10">
-								<div class="panel panel-default">
-									<div class="panel-heading">Create Brand</div>
-									<div class="panel-body">
-										<form method="post" name="chngpwd" class="form-horizontal">
+						<!-- Zero Configuration Table -->
+						<div class="panel panel-default">
+							<div class="panel-heading">Listed  Brands</div>
+							<div class="panel-body">
 
-											<div class="form-group">
-												<label class="col-sm-4 control-label">Brand Name</label>
-												<div class="col-sm-8">
-													<input type="text" class="form-control" name="brand" id="brand" required>
-												</div>
-											</div>
-											<div class="hr-dashed"></div>
-											
-											<div class="form-group">
-												<div class="col-sm-8 col-sm-offset-4">
-								
-													<button class="btn btn-primary" name="submit" type="submit">Submit</button>
-												</div>
-											</div>
+								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+									<thead>
+										<tr>
+										<th>#</th>
+												<th>Brand Name</th>
+											<th>Creation Date</th>
+											<th>Updation date</th>
+										
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+										<th>#</th>
+											<th>Brand Name</th>
+											<th>Creation Date</th>
+											<th>Updation date</th>
+										
+											<th>Action</th>
+										</tr>
+										</tr>
+									</tfoot>
+									<tbody>
 
-										</form>
-
-									</div>
-								</div>
+<?php 
+									
+	$sql = "SELECT * from  tblbrands";
+	$results = mysqli_query($db, $sql);
+	foreach($results as $result){				
+?>	
+										<tr>
+											<td><?php echo htmlentities($result['id']);?></td>
+											<td><?php echo htmlentities($result['BrandName']);?></td>
+											<td><?php echo htmlentities($result['CreationDate']);?></td>
+											<td><?php echo htmlentities($result['UpdationDate']);?></td>
+<td><a href="edit-brand.php?id=<?php echo $result['id'];?>"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;
+<a href="manage-brands.php?del=<?php echo $result['id'];?>" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i></a></td>
+										</tr>
+										<?php } ?>
+										
+									</tbody>
+								</table>
 							</div>
-							
 						</div>
-						
+
 					
 
 					</div>
 				</div>
-				
-			
+
 			</div>
 		</div>
 	</div>
@@ -150,7 +133,5 @@
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
-
 </body>
-
 </html>

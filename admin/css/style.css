@@ -745,3 +745,11 @@ li {
   height: 100%;
   width: 100%;
 }
+
+.w-25{
+  width: 25%;
+}
+
+.m-auto{
+  margin: auto
+}

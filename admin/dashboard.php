@@ -98,8 +98,16 @@
 									<div class="col-md-3">
 										<div class="panel panel-default">
 											<div class="panel-body bk-warning text-light">
+
+<?php 
+	$bquery = "SELECT * FROM tblbrands";
+	$bresult = mysqli_query($db, $bquery);
+	$brands = mysqli_num_rows($bresult);
+?>
+
+											
 												<div class="stat-panel text-center">
-												<div class="stat-panel-number h1 ">4</div>
+												<div class="stat-panel-number h1 "><?php echo $brands; ?></div>
 													<div class="stat-panel-title text-uppercase">Listed Brands</div>
 												</div>
 											</div>
