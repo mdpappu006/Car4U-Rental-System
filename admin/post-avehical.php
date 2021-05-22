@@ -1,6 +1,11 @@
 <?php
 	include_once('backend/db.php');
 	include_once('backend/post-vehical.php');
+	$id = $_SESSION['userid'] ?? 0;
+	if(!$id){
+		header("location: index.php");
+		die();
+	}
 ?>
 <!doctype html>
 <html lang="en" class="no-js">
@@ -64,6 +69,24 @@
 					
 						<h2 class="page-title">Post A Vehicle</h2>
 
+    <!-- Error Messages -->
+    <?php if(isset($_SESSION['error'])):?>
+        <div class="mt-5 alert alert-danger text-uppercase text-center font-weight-bold" role="alert">
+			Post doesn't submitted!
+        </div>
+    <?php unset($_SESSION["error"]);endif;?> 
+    <!-- Error Messages -->
+
+    <!-- success Message -->    
+    <?php if(isset($_SESSION['success'])):?>
+        <div class="mt-5 alert alert-success text-uppercase text-center font-weight-bold" role="alert">
+            The Post Successful submitted.
+        </div>
+    <?php unset($_SESSION["success"]);
+        
+    endif;?> 
+	<!-- success Message -->
+
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
@@ -103,7 +126,7 @@
 </div>
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Price Per Day(in USD)<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Price Per Day(in BDT)<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <input type="text" name="priceperday" class="form-control">
 </div>
