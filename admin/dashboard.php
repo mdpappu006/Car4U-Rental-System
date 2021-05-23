@@ -83,7 +83,8 @@
 											<a href="manage-vehicles.php" class="block-anchor panel-footer text-center">Full Detail &nbsp; <i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
-									<div class="col-md-3">
+
+									<!-- <div class="col-md-3">
 										<div class="panel panel-default">
 											<div class="panel-body bk-info text-light">
 												<div class="stat-panel text-center">
@@ -94,7 +95,8 @@
 											</div>
 											<a href="manage-bookings.php" class="block-anchor panel-footer text-center">Full Detail &nbsp; <i class="fa fa-arrow-right"></i></a>
 										</div>
-									</div>
+									</div> -->
+
 									<div class="col-md-3">
 										<div class="panel panel-default">
 											<div class="panel-body bk-warning text-light">
@@ -129,7 +131,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="row">
-									<div class="col-md-3">
+									<!-- <div class="col-md-3">
 										<div class="panel panel-default">
 											<div class="panel-body bk-primary text-light">
 												<div class="stat-panel text-center">
@@ -163,7 +165,7 @@
 											<a href="testimonials.php" class="block-anchor panel-footer text-center">Full Detail &nbsp; <i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
-								
+								 -->
 								</div>
 							</div>
 						</div>

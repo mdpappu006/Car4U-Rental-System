@@ -1,4 +1,5 @@
-<?php include_once('partials/header.php');
+<?php 
+  include_once('partials/header.php');
 ?>
 
 <!-- Banners -->
@@ -40,7 +41,7 @@
         <div role="tabpanel" class="tab-pane active" id="resentnewcar">
           <!-- Start Post Loop for car -->
           <?php
-            $sql = "SELECT * FROM tblvehicles ORDER BY id DESC";
+            $sql = "SELECT * FROM tblvehicles ORDER BY id DESC LIMIT 9";
             $results = mysqli_query($db, $sql);
             foreach($results as $row):
           ?>
