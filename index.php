@@ -47,7 +47,7 @@
           ?>
           <div class="col-list-3">
             <div class="recent-car-list">
-              <div class="car-info-box"> <a href="#"><img src="admin/img/vehicleimages/<?php echo $row['Vimage1']; ?>" class="img-responsive" alt="image"></a>
+              <div class="car-info-box"> <a href="vehical-details.php?id=<?php echo $row['id'] ?>"><img src="admin/img/vehicleimages/<?php echo $row['Vimage1']; ?>" class="img-responsive" alt="image"></a>
                 
                 <ul>
                   <li><i class="fa fa-car" aria-hidden="true"></i><?php echo $row['FuelType'];?></li>
