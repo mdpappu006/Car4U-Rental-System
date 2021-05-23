@@ -38,179 +38,42 @@
       <!-- Recently Listed New Cars -->
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="resentnewcar">
+          <!-- Start Post Loop for car -->
+          <?php
+            $sql = "SELECT * FROM tblvehicles ORDER BY id DESC";
+            $results = mysqli_query($db, $sql);
+            foreach($results as $row):
+          ?>
           <div class="col-list-3">
             <div class="recent-car-list">
-              <div class="car-info-box"> <a href="#"><img src="assets/images/600x380.jpg" class="img-responsive" alt="image"></a>
-                <div class="compare_item">
-                  <div class="checkbox">
-                    <input type="checkbox" id="compare4">
-                    <label for="compare4">Compare</label>
-                  </div>
-                </div>
+              <div class="car-info-box"> <a href="#"><img src="admin/img/vehicleimages/<?php echo $row['Vimage1']; ?>" class="img-responsive" alt="image"></a>
+                
                 <ul>
-                  <li><i class="fa fa-road" aria-hidden="true"></i>20,000 km</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 Model</li>
-                  <li><i class="fa fa-map-marker" aria-hidden="true"></i>Colorado, USA</li>
+                  <li><i class="fa fa-car" aria-hidden="true"></i><?php echo $row['FuelType'];?></li>
+                  <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo $row['ModelYear'];?> Model</li>
+                  <li><i class="fa fa-user" aria-hidden="true"></i><?php echo $row['SeatingCapacity'];?> seats</li>
                 </ul>
               </div>
               <div class="car-title-m">
-                <h6><a href="#">Car Name</a></h6>
-                <span class="price">$45,000</span> 
+                <h6><a href="#"><?php echo $row['VehiclesTitle'];?></a></h6>
+                <span class="price">Tk.<?php echo $row['PricePerDay'];?></span> 
               </div>
               <div class="inventory_info_m">
-	                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	                <p><?php  
+                    $des = $row['VehiclesOverview'];
+                    $vtext = substr($des, 0,70);
+                    echo $vtext;
+                  ?></p>
                  </div>
             </div>
           </div>
+
+          
+          <?php endforeach;?>
+          <!-- End Post Loop for car -->
+          
         </div>
-        
-        <!-- Recently Listed Used Cars -->
-        <div role="tabpanel" class="tab-pane" id="resentusecar">
-          <div class="col-list-3">
-            <div class="recent-car-list">
-              <div class="car-info-box"> <a href="#"><img src="assets/images/600x380.jpg" class="img-responsive" alt="image"></a>
-                <div class="compare_item">
-                  <div class="checkbox">
-                    <input type="checkbox" id="compare90">
-                    <label for="compare9">Compare</label>
-                  </div>
-                </div>
-                <ul>
-                  <li><i class="fa fa-road" aria-hidden="true"></i>20,000 km</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 Model</li>
-                  <li><i class="fa fa-map-marker" aria-hidden="true"></i>Colorado, USA</li>
-                </ul>
-              </div>
-              <div class="car-title-m">
-                <h6><a href="#">Used Car Name</a></h6>
-                <span class="price">$90,000</span> 
-              </div>
-              <div class="inventory_info_m">
-	                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                 </div>
-            </div>
-          </div>
-          <div class="col-list-3">
-            <div class="recent-car-list">
-              <div class="car-info-box"> <a href="#"><img src="assets/images/600x380.jpg" class="img-responsive" alt="image"></a>
-                <div class="compare_item">
-                  <div class="checkbox">
-                    <input type="checkbox" id="compare10">
-                    <label for="compare10">Compare</label>
-                  </div>
-                </div>
-                <ul>
-                  <li><i class="fa fa-road" aria-hidden="true"></i>20,000 km</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 Model</li>
-                  <li><i class="fa fa-map-marker" aria-hidden="true"></i>Colorado, USA</li>
-                </ul>
-              </div>
-              <div class="car-title-m">
-                <h6><a href="#">Used Car Name</a></h6>
-                <span class="price">$49,000</span>
-              </div>
-              <div class="inventory_info_m">
-	                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                 </div>
-            </div>
-          </div>
-          <div class="col-list-3">
-            <div class="recent-car-list">
-              <div class="car-info-box"> <a href="#"><img src="assets/images/600x380.jpg" class="img-responsive" alt="image"></a>
-                <div class="compare_item">
-                  <div class="checkbox">
-                    <input type="checkbox" id="compare11">
-                    <label for="compare11">Compare</label>
-                  </div>
-                </div>
-                <ul>
-                  <li><i class="fa fa-road" aria-hidden="true"></i>20,000 km</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 Model</li>
-                  <li><i class="fa fa-map-marker" aria-hidden="true"></i>Colorado, USA</li>
-                </ul>
-              </div>
-              <div class="car-title-m">
-                <h6><a href="#">Used Car Name</a></h6>
-                <span class="price">$20,000</span> 
-               </div>
-               <div class="inventory_info_m">
-	                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                 </div>
-            </div>
-          </div>
-          <div class="col-list-3">
-            <div class="recent-car-list">
-              <div class="car-info-box"> <a href="#"><img src="assets/images/600x380.jpg" class="img-responsive" alt="image"></a>
-                <div class="compare_item">
-                  <div class="checkbox">
-                    <input type="checkbox" id="compare12">
-                    <label for="compare12">Compare</label>
-                  </div>
-                </div>
-                <ul>
-                  <li><i class="fa fa-road" aria-hidden="true"></i>20,000 km</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 Model</li>
-                  <li><i class="fa fa-map-marker" aria-hidden="true"></i>Colorado, USA</li>
-                </ul>
-              </div>
-              <div class="car-title-m">
-                <h6><a href="#">Used Car Name</a></h6>
-                <span class="price">$45,000</span> 
-               </div>
-               <div class="inventory_info_m">
-	                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                 </div>
-            </div>
-          </div>
-          <div class="col-list-3">
-            <div class="recent-car-list">
-              <div class="car-info-box"> <a href="#"><img src="assets/images/600x380.jpg" class="img-responsive" alt="image"></a>
-                <div class="compare_item">
-                  <div class="checkbox">
-                    <input type="checkbox" id="compare13">
-                    <label for="compare13">Compare</label>
-                  </div>
-                </div>
-                <ul>
-                  <li><i class="fa fa-road" aria-hidden="true"></i>20,000 km</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 Model</li>
-                  <li><i class="fa fa-map-marker" aria-hidden="true"></i>Colorado, USA</li>
-                </ul>
-              </div>
-              <div class="car-title-m">
-                <h6><a href="#">Used Car Name</a></h6>
-                <span class="price">$20,000</span> 
-               </div>
-               <div class="inventory_info_m">
-	                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                 </div>
-            </div>
-          </div>
-          <div class="col-list-3">
-            <div class="recent-car-list">
-              <div class="car-info-box"> <a href="#"><img src="assets/images/600x380.jpg" class="img-responsive" alt=""></a>
-                <div class="compare_item">
-                  <div class="checkbox">
-                    <input type="checkbox" id="compare14">
-                    <label for="compare14">Compare</label>
-                  </div>
-                </div>
-                <ul>
-                  <li><i class="fa fa-road" aria-hidden="true"></i>20,000 km</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 Model</li>
-                  <li><i class="fa fa-map-marker" aria-hidden="true"></i>Colorado, USA</li>
-                </ul>
-              </div>
-              <div class="car-title-m">
-                <h6><a href="#">Used Car Name</a></h6>
-                <span class="price">$60,000</span> 
-               </div>
-               <div class="inventory_info_m">
-	                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                 </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
