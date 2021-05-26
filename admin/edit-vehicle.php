@@ -5,6 +5,26 @@
 		header("location: index.php");
 		die();
 	}
+
+    
+
+	// Update Query 
+	$vehicleID =$_GET['id'];
+
+	if(isset($_POST['updateQuery'])){
+		$VehiclesTitle = trim($_POST['vehicletitle']);
+        $vehicalOverView = trim($_POST['vehicalorcview']);
+        $PricePerDay = trim($_POST['priceperday']);
+        $fuelType = trim($_POST['fueltype']);
+        $mYear = trim($_POST['modelyear']);
+        $SeatingCapacity = trim($_POST['seatingcapacity']);
+        
+
+
+		$upSql = "UPDATE tblvehicles SET VehiclesTitle='{$VehiclesTitle}', VehiclesOverview= '{$vehicalOverView}', PricePerDay='{$PricePerDay}', FuelType='{$fuelType}', ModelYear='$mYear', SeatingCapacity='{$SeatingCapacity}' WHERE id='{$vehicleID}'";
+		$Upresults = mysqli_query($db, $upSql);
+        header("location: edit-vehicle.php?id={$vehicleID}");
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -77,7 +97,7 @@
 
 	foreach($results as $row):
 ?>										
-                                            <form method="post" class="form-horizontal" enctype="multipart/form-data">
+                                            <form method="POST" class="form-horizontal" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <label class="col-sm-2 control-label">Vehicle Title<span style="color: red;">*</span></label>
                                                     <div class="col-sm-4">
@@ -85,7 +105,7 @@
                                                     </div>
                                                     <label class="col-sm-2 control-label">Select Brand<span style="color: red;">*</span></label>
                                                     <div class="col-sm-4">
-                                                        <select class="selectpicker" name="brandname" required>
+                                                        <select class="selectpicker" name="brandname">
                                                             <option value=""> </option>
 
                                                             <option value=""> </option>
@@ -108,7 +128,7 @@
                                                     </div>
                                                     <label class="col-sm-2 control-label">Select Fuel Type<span style="color: red;">*</span></label>
                                                     <div class="col-sm-4">
-                                                        <select class="selectpicker" name="fueltype" required>
+                                                        <select class="selectpicker" name="fueltype">
                                                             <option value=""><?php echo $row['FuelType'];?> </option>
 
                                                             <option value="Petrol">Petrol</option>
@@ -164,11 +184,98 @@
                                                 </div>
                                                 <div class="hr-dashed"></div>
 
-                                                <div class="form-group">
-                                                    <div class="col-sm-8 col-sm-offset-2">
-                                                        <button class="btn btn-primary" name="submit" type="submit" style="margin-top: 4%;">Update</button>
-                                                    </div>
-                                                </div>
+												<div class="row">
+													<div class="col-md-12">
+														<div class="panel panel-default">
+															<div class="panel-heading">Accessories</div>
+															<div class="panel-body">
+																<div class="form-group">
+																	<div class="col-sm-3">
+																		<div class="checkbox checkbox-inline">
+																			<input type="checkbox" id="airconditioner" name="airconditioner" <?php if($row['AirConditioner']){ echo "checked";}?>/>
+																			<label for="airconditioner"> Air Conditioner </label>
+																		</div>
+																	</div>
+																	<div class="col-sm-3">
+																		<div class="checkbox checkbox-inline">
+																			<input type="checkbox" id="powerdoorlocks" name="powerdoorlocks" value="1" <?php if($row['PowerDoorLocks']){ echo "checked";}?>/>
+																			<label for="powerdoorlocks"> Power Door Locks </label>
+																		</div>
+																	</div>
+																	<div class="col-sm-3">
+																		<div class="checkbox checkbox-inline">
+																			<input type="checkbox" id="antilockbrakingsys" name="antilockbrakingsys" value="1" <?php if($row['AntiLockBrakingSystem']){ echo "checked";}?>/>
+																			<label for="antilockbrakingsys"> AntiLock Braking System </label>
+																		</div>
+																	</div>
+																	<div class="checkbox checkbox-inline">
+																		<input type="checkbox" id="brakeassist" name="brakeassist" value="1" <?php if($row['BrakeAssist']){ echo "checked";}?>/>
+																		<label for="brakeassist"> Brake Assist </label>
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<div class="col-sm-3">
+																		<div class="checkbox checkbox-inline">
+																			<input type="checkbox" id="powersteering" name="powersteering" value="1" <?php if($row['PowerSteering']){ echo "checked";}?>/>
+																			<label for="inlineCheckbox5"> Power Steering </label>
+																		</div>
+																	</div>
+																	<div class="col-sm-3">
+																		<div class="checkbox checkbox-inline">
+																			<input type="checkbox" id="driverairbag" name="driverairbag" value="1" <?php if($row['DriverAirbag']){ echo "checked";}?>/>
+																			<label for="driverairbag">Driver Airbag</label>
+																		</div>
+																	</div>
+																	<div class="col-sm-3">
+																		<div class="checkbox checkbox-inline">
+																			<input type="checkbox" id="passengerairbag" name="passengerairbag" value="1" <?php if($row['PassengerAirbag']){ echo "checked";}?>/>
+																			<label for="passengerairbag"> Passenger Airbag </label>
+																		</div>
+																	</div>
+																	<div class="checkbox checkbox-inline">
+																		<input type="checkbox" id="powerwindow" name="powerwindow" value="1" <?php if($row['PowerWindows']){ echo "checked";}?>/>
+																		<label for="powerwindow"> Power Windows </label>
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<div class="col-sm-3">
+																		<div class="checkbox checkbox-inline">
+																			<input type="checkbox" id="cdplayer" name="cdplayer" value="1" <?php if($row['CDPlayer']){ echo "checked";}?>/>
+																			<label for="cdplayer"> CD Player </label>
+																		</div>
+																	</div>
+																	<div class="col-sm-3">
+																		<div class="checkbox h checkbox-inline">
+																			<input type="checkbox" id="centrallocking" name="centrallocking" value="1" <?php if($row['CentralLocking']){ echo "checked";}?>/>
+																			<label for="centrallocking">Central Locking</label>
+																		</div>
+																	</div>
+																	<div class="col-sm-3">
+																		<div class="checkbox checkbox-inline">
+																			<input type="checkbox" id="crashcensor" name="crashcensor" value="1" <?php if($row['CrashSensor']){ echo "checked";}?>/>
+																			<label for="crashcensor"> Crash Sensor </label>
+																		</div>
+																	</div>
+																	<div class="col-sm-3">
+																		<div class="checkbox checkbox-inline">
+																			<input type="checkbox" id="leatherseats" name="leatherseats" value="1" <?php if($row['LeatherSeats']){ echo "checked";}?>/>
+																			<label for="leatherseats"> Leather Seats </label>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<div class="col-sm-8 col-sm-offset-2">
+																		<a class="btn btn-default" href="manage-vehicles.php">Cancel</a>
+																		<button class="btn btn-primary" name="updateQuery" type="submit">UPDATE</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
                                             </form>
 <?php 
 	endforeach;
