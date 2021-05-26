@@ -70,14 +70,18 @@
                                         <div class="panel-heading">Basic Info</div>
                                         <div class="panel-body">
 
-<?php 
-	
+<?php
+	$editID= $_GET['id'];
+	$sql = "SELECT * FROM tblvehicles where id='{$editID}'";
+	$results = mysqli_query($db, $sql);
+
+	foreach($results as $row):
 ?>										
                                             <form method="post" class="form-horizontal" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <label class="col-sm-2 control-label">Vehicle Title<span style="color: red;">*</span></label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" name="vehicletitle" class="form-control" value="" required />
+                                                        <input type="text" name="vehicletitle" class="form-control" value="<?php echo $row['VehiclesTitle'];?>" required />
                                                     </div>
                                                     <label class="col-sm-2 control-label">Select Brand<span style="color: red;">*</span></label>
                                                     <div class="col-sm-4">
@@ -93,19 +97,19 @@
                                                 <div class="form-group">
                                                     <label class="col-sm-2 control-label">Vehical Overview<span style="color: red;">*</span></label>
                                                     <div class="col-sm-10">
-                                                        <textarea class="form-control" name="vehicalorcview" rows="3" required> </textarea>
+                                                        <textarea class="form-control" name="vehicalorcview" rows="5" required> <?php echo $row['VehiclesOverview'];?> </textarea>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label class="col-sm-2 control-label">Price Per Day(in USD)<span style="color: red;">*</span></label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" name="priceperday" class="form-control" value="" required />
+                                                        <input type="text" name="priceperday" class="form-control" value="<?php echo $row['PricePerDay'];?>" required />
                                                     </div>
                                                     <label class="col-sm-2 control-label">Select Fuel Type<span style="color: red;">*</span></label>
                                                     <div class="col-sm-4">
                                                         <select class="selectpicker" name="fueltype" required>
-                                                            <option value=""> </option>
+                                                            <option value=""><?php echo $row['FuelType'];?> </option>
 
                                                             <option value="Petrol">Petrol</option>
                                                             <option value="Diesel">Diesel</option>
@@ -117,11 +121,11 @@
                                                 <div class="form-group">
                                                     <label class="col-sm-2 control-label">Model Year<span style="color: red;">*</span></label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" name="modelyear" class="form-control" value="" required />
+                                                        <input type="text" name="modelyear" class="form-control" value="<?php echo $row['ModelYear'];?>" required />
                                                     </div>
                                                     <label class="col-sm-2 control-label">Seating Capacity<span style="color: red;">*</span></label>
                                                     <div class="col-sm-4">
-                                                        <input type="text" name="seatingcapacity" class="form-control" value="" required />
+                                                        <input type="text" name="seatingcapacity" class="form-control" value="<?php echo $row['SeatingCapacity'];?>" required />
                                                     </div>
                                                 </div>
                                                 <div class="hr-dashed"></div>
@@ -133,28 +137,28 @@
 
                                                 <div class="form-group">
                                                     <div class="col-sm-4">
-                                                        Image 1 <img src="img/vehicleimages/" width="300" height="200" style="border: solid 1px #000;" />
+                                                        Image 1 <img src="img/vehicleimages/<?php echo $row['Vimage1']?>" width="300" height="200" style="border: solid 1px #000;" />
                                                         <a href="changeimage1.php?imgid=">Change Image 1</a>
                                                     </div>
                                                     <div class="col-sm-4">
-                                                        Image 2<img src="img/vehicleimages/" width="300" height="200" style="border: solid 1px #000;" />
+                                                        Image 2<img src="img/vehicleimages/<?php echo $row['Vimage2']?>" width="300" height="200" style="border: solid 1px #000;" />
                                                         <a href="changeimage2.php?imgid=">Change Image 2</a>
                                                     </div>
                                                     <div class="col-sm-4">
-                                                        Image 3<img src="img/vehicleimages/" width="300" height="200" style="border: solid 1px #000;" />
+                                                        Image 3<img src="img/vehicleimages/<?php echo $row['Vimage3']?>" width="300" height="200" style="border: solid 1px #000;" />
                                                         <a href="changeimage3.php?imgid=">Change Image 3</a>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <div class="col-sm-4">
-                                                        Image 4<img src="img/vehicleimages/" width="300" height="200" style="border: solid 1px #000;" />
+                                                        Image 4<img src="img/vehicleimages/<?php echo $row['Vimage4']?>" width="300" height="200" style="border: solid 1px #000;" />
                                                         <a href="changeimage4.php?imgid=">Change Image 4</a>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         Image 5
 
-                                                        <img src="img/vehicleimages/" width="300" height="200" style="border: solid 1px #000;" />
+                                                        <img src="img/vehicleimages/<?php echo $row['Vimage5']?>" width="300" height="200" style="border: solid 1px #000;" />
                                                         <a href="changeimage5.php?imgid=">Change Image 5</a>
                                                     </div>
                                                 </div>
@@ -166,6 +170,9 @@
                                                     </div>
                                                 </div>
                                             </form>
+<?php 
+	endforeach;
+?>
                                         </div>
                                     </div>
                                 </div>
