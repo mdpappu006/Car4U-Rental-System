@@ -17,7 +17,7 @@
 						<li><a href="manage-vehicles.php">Manage Vehicles</a></li>
 					</ul>
 				</li>
-<!-- 
+
 <li><a href="#"><i class="fa fa-sitemap"></i> Bookings</a>
 					<ul>
 						<li><a href="new-bookings.php">New</a></li>
@@ -25,7 +25,7 @@
 						<li><a href="canceled-bookings.php">Canceled</a></li>
 					</ul>
 				</li>
-
+<!-- 
 		
 
 			<li><a href="testimonials.php"><i class="fa fa-table"></i> Manage Testimonials</a></li>

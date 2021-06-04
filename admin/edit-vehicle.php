@@ -6,10 +6,8 @@
 		die();
 	}
 
-    
-
 	// Update Query 
-	$vehicleID =$_GET['id'];
+	$vehicleID = $_GET['id'];
 
 	if(isset($_POST['updateQuery'])){
 		$VehiclesTitle = trim($_POST['vehicletitle']);
@@ -18,10 +16,20 @@
         $fuelType = trim($_POST['fueltype']);
         $mYear = trim($_POST['modelyear']);
         $SeatingCapacity = trim($_POST['seatingcapacity']);
-        
+        $airconditioner = $_POST['airconditioner'] ?? 0;
+        $pDlocks = $_POST['powerdoorlocks'] ?? 0;
+        $AntiLocks = $_POST['antilockbrakingsys'] ?? 0;
+        $BrakeAssist = $_POST['brakeassist'] ?? 0;
+        $PowerS= $_POST['powersteering'] ?? 0;
+        $DriverA = $_POST['driverairbag'] ?? 0;
+        $PassengerA = $_POST['passengerairbag'] ?? 0;
+        $PowerW = $_POST['powerwindow'] ?? 0;
+        $CDPlayer = $_POST['cdplayer'] ?? 0;
+        $CentralL = $_POST['centrallocking'] ?? 0;
+        $CrashSen = $_POST['crashcensor'] ?? 0;
+        $lseats = $_POST['leatherseats'] ?? 0;
 
-
-		$upSql = "UPDATE tblvehicles SET VehiclesTitle='{$VehiclesTitle}', VehiclesOverview= '{$vehicalOverView}', PricePerDay='{$PricePerDay}', FuelType='{$fuelType}', ModelYear='$mYear', SeatingCapacity='{$SeatingCapacity}' WHERE id='{$vehicleID}'";
+		$upSql = "UPDATE tblvehicles SET VehiclesTitle='{$VehiclesTitle}', VehiclesOverview= '{$vehicalOverView}', PricePerDay='{$PricePerDay}', FuelType='{$fuelType}', ModelYear='$mYear', SeatingCapacity='{$SeatingCapacity}', AirConditioner='{$airconditioner}', PowerDoorLocks='{$pDlocks}', AntiLockBrakingSystem='{$AntiLocks}', BrakeAssist='{$BrakeAssist}', PowerSteering='{$PowerS}', DriverAirbag='{$DriverA}', PassengerAirbag='{$PassengerA}', PowerWindows='{$PowerW}', CDPlayer='{$CDPlayer}', CentralLocking='{$CentralL}', CrashSensor='{$CrashSen}', LeatherSeats='{$lseats}' WHERE id='{$vehicleID}'";
 		$Upresults = mysqli_query($db, $upSql);
         header("location: edit-vehicle.php?id={$vehicleID}");
 	}
@@ -158,11 +166,11 @@
                                                 <div class="form-group">
                                                     <div class="col-sm-4">
                                                         Image 1 <img src="img/vehicleimages/<?php echo $row['Vimage1']?>" width="300" height="200" style="border: solid 1px #000;" />
-                                                        <a href="changeimage1.php?imgid=">Change Image 1</a>
+                                                        <a href="changeimage1.php?imgid=<?php echo $editID;?>">Change Image 1</a>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         Image 2<img src="img/vehicleimages/<?php echo $row['Vimage2']?>" width="300" height="200" style="border: solid 1px #000;" />
-                                                        <a href="changeimage2.php?imgid=">Change Image 2</a>
+                                                        <a href="changeimage2.php?imgid=<?php echo $editID;?>">Change Image 2</a>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         Image 3<img src="img/vehicleimages/<?php echo $row['Vimage3']?>" width="300" height="200" style="border: solid 1px #000;" />
@@ -192,7 +200,7 @@
 																<div class="form-group">
 																	<div class="col-sm-3">
 																		<div class="checkbox checkbox-inline">
-																			<input type="checkbox" id="airconditioner" name="airconditioner" <?php if($row['AirConditioner']){ echo "checked";}?>/>
+																			<input type="checkbox" id="airconditioner" name="airconditioner" value="1" <?php if($row['AirConditioner']){ echo "checked";}?>/>
 																			<label for="airconditioner"> Air Conditioner </label>
 																		</div>
 																	</div>

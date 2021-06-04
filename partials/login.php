@@ -16,6 +16,7 @@
                     if(password_verify($userpass, $_password)){
                         $_SESSION['userid'] = $data['id'];
                         $_SESSION['userName'] = $data['FullName'];
+                        $_SESSION['userEmail'] = $data['EmailId'];
                         header('location: ./index.php');
                         die();
                     }else{

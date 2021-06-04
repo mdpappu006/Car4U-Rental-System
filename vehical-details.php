@@ -3,13 +3,35 @@
   include_once('partials/header.php');
   $postID = $_GET['id'] ?? 0;
   
+  $id = $_SESSION['userid'] ?? 0;
+
   if(!$postID){
     header('location:index.php');
   }
 
   $sql = "SELECT * from tblvehicles where id='$postID' LIMIT 1";
   $results = mysqli_query($db, $sql);
-  
+
+
+  // Booking query
+  if(isset($_POST['bookNow'])){
+    $fromdate=$_POST['fromdate'];
+    $todate=$_POST['todate']; 
+    $message=$_POST['message'];
+    $useremail=$_SESSION['userEmail'];
+    $status=0;
+    $vhid =$_GET['id'];
+    $bookingno=mt_rand(100000000, 999999999);
+
+    $booksql="INSERT INTO tblbooking(BookingNumber,userEmail,VehicleId,FromDate,ToDate,message,Status) VALUES('$bookingno','$useremail','$vhid','$fromdate','$todate','$message','$status')";
+
+    $result = mysqli_query($db, $booksql);
+    if($result){
+      $_SESSION['booked'] = true;
+      header("location: vehical-details.php?id=$postID");
+    }
+  }
+
 
 ?>
 
@@ -234,20 +256,34 @@
             <h5><i class="fa fa-envelope" aria-hidden="true"></i> Book Now </h5>
           </div>
           <div class="financing_calculatoe">
-            <form method="post">
+            <form method="POST">
               <div class="form-group">
                 <label>From Date:</label>
-                <input type="date" class="form-control" name="fromdate" placeholder="From Date" required="">
+                <input type="date" class="form-control" name="fromdate" placeholder="From Date" required>
               </div>
               <div class="form-group">
                 <label>To Date:</label>
-                <input type="date" class="form-control" name="todate" placeholder="To Date" required="">
+                <input type="date" class="form-control" name="todate" placeholder="To Date" required>
               </div>
               <div class="form-group">
-                <textarea rows="4" class="form-control" name="message" placeholder="Message" required=""></textarea>
+                <textarea rows="4" class="form-control" name="message" placeholder="Message" required></textarea>
               </div>
-              <a href="login.php" class="btn btn-xs uppercase">Login For Book</a>
 
+              <?php
+                // Booking user login id
+
+                if($id):
+                  
+              ?>
+                
+                <button name="bookNow" class="btn btn-xs uppercase">Book Now</button>
+
+
+              <?php else: ?>
+
+                <a href="login.php" class="btn btn-xs uppercase">Login For Book</a>
+              
+              <?php endif;?>
             </form>
           </div>
         </div>

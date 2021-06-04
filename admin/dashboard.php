@@ -75,8 +75,12 @@
 										<div class="panel panel-default">
 											<div class="panel-body bk-success text-light">
 												<div class="stat-panel text-center">
-												
-													<div class="stat-panel-number h1 ">5</div>
+<?php 
+	$lvquery = "SELECT * FROM tblbrands";
+	$lvresult = mysqli_query($db, $lvquery);
+	$listb = mysqli_num_rows($lvresult);
+?>												
+													<div class="stat-panel-number h1 "><?php echo $listb;?></div>
 													<div class="stat-panel-title text-uppercase">Listed Vehicles</div>
 												</div>
 											</div>
@@ -84,18 +88,22 @@
 										</div>
 									</div>
 
-									<!-- <div class="col-md-3">
+									<div class="col-md-3">
 										<div class="panel panel-default">
 											<div class="panel-body bk-info text-light">
 												<div class="stat-panel text-center">
-
-													<div class="stat-panel-number h1 ">4</div>
+												<?php 
+	$bquery = "SELECT * FROM tblbooking";
+	$bresult = mysqli_query($db, $bquery);
+	$booked_user = mysqli_num_rows($bresult);
+?>
+													<div class="stat-panel-number h1 "><?php echo $booked_user;?></div>
 													<div class="stat-panel-title text-uppercase">Total Bookings</div>
 												</div>
 											</div>
 											<a href="manage-bookings.php" class="block-anchor panel-footer text-center">Full Detail &nbsp; <i class="fa fa-arrow-right"></i></a>
 										</div>
-									</div> -->
+									</div>
 
 									<div class="col-md-3">
 										<div class="panel panel-default">
